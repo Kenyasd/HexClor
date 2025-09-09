@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HexClor.MainPage"
+              BackgroundImageSource="https://i.pinimg.com/736x/20/0a/80/200a80450cf1694f748b0e91c04f4334.jpg">
+   
+    <!-- Scroll Layout-->
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+          
+            <!-- Title Label -->
+            <Label
+                  Text="Color Maker"
+                  FontSize="40"
+                  FontAttributes="Bold"
+                  TextColor="White"
+                  FontFamily="NexaHeavy"
+                  HorizontalTextAlignment="Center"            
+                             />
+
+                <!-- HEX Input Field -->
+                <Entry x:Name="Hex"
+                         Placeholder="#RRGGBB"
+                         TextChanged="OnHexChanged"
+                         BackgroundColor ="White"
+                         TextColor="Black"/>
+
+                <!-- Background Color Display Panel -->
+                <Frame x:Name="Displaycolor"
+                         HeightRequest="200"
+                          BackgroundColor="Beige"
+                          CornerRadius="15"
+                         HasShadow="True"/>
+    
+                <!-- RGB Sliders -->
+                
+                <!-- Red Component -->
+                <Label Text="R Color" TextColor ="White"/>
+                <Slider x:Name="RSlider" 
+                        Minimum="0" 
+                        Maximum="255" 
+                        ValueChanged="Slider_ValueChanged"/>
+                
+                <!-- Green Component -->
+                <Label Text="G Color"  TextColor ="White"/>
+                <Slider x:Name="GSlider" 
+                        Minimum="0" 
+                        Maximum="255" 
+                        ValueChanged="Slider_ValueChanged"/>
+
+                 <!-- Blue Component -->
+                 <Label Text="B Color" TextColor ="White"/>
+                <Slider x:Name="BSlider" 
+                        Minimum="0" 
+                        Maximum="255"
+                        ValueChanged="Slider_ValueChanged"/>
+
+                <!-- Random Color Button -->
+                <Button Text="Generate Random Color" Clicked="OnRandomClicked"/>
+
+            </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>
